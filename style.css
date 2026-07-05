@@ -1,0 +1,101 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: white;
+  text-align: center;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #111827;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* HERO */
+header {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #00ffcc, #0066ff);
+  color: black;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 50px 20px;
+}
+
+/* ROOMS */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 40px;
+}
+
+.card {
+  background: #141b2d;
+  padding: 20px;
+  width: 200px;
+  border-radius: 12px;
+}
+
+/* PHOTOS */
+.photos {
+  padding: 50px 20px;
+}
+
+.photo-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 100px;
+  background: #1c2540;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+/* CONTACT */
+.contact {
+  padding: 50px 20px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  opacity: 0.6;
+  font-size: 12px;
+}
