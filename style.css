@@ -12,11 +12,56 @@ nav {
 }
 
 header {
-  padding: 60px 20px;
+  padding: 70px 20px;
   background: linear-gradient(135deg, #00ffcc, #0066ff);
   color: black;
 }
 
+/* SECTIONS */
+.section {
+  padding: 40px 20px;
+}
+
+/* ROOMS */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px;
+}
+
+.card {
+  background: #141b2d;
+  padding: 20px;
+  width: 180px;
+  border-radius: 12px;
+}
+
+/* GALLERY */
+.gallery {
+  padding: 40px 20px;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.box {
+  width: 120px;
+  height: 80px;
+  background: #1c2540;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+/* BOOKING */
 .booking {
   background: #141b2d;
   margin: 30px auto;
@@ -36,8 +81,6 @@ button {
   padding: 10px;
   background: #00ffcc;
   border: none;
-  cursor: pointer;
-  margin-top: 10px;
 }
 
 .btn {
@@ -50,6 +93,7 @@ button {
   border-radius: 8px;
 }
 
+/* FOOTER */
 footer {
   padding: 20px;
   opacity: 0.6;
