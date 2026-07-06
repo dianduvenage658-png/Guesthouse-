@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secunda Guesthouse Booking</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secunda Guesthouse</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav>
@@ -13,35 +14,69 @@
 </nav>
 
 <header>
-  <h1>Book Your Stay 🔥</h1>
-  <p>Simple • Fast • Reliable</p>
+  <h1>Book Your Stay in Seconds 🔥</h1>
+  <p>Clean • Affordable • Secure</p>
 </header>
 
-<!-- BOOKING BOX -->
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Us</h2>
+  <p>
+    Welcome to our guesthouse in Secunda. We offer comfortable stays, safe parking,
+    and a peaceful environment for short or long visits.
+  </p>
+</section>
+
+<!-- ROOMS -->
+<section class="cards">
+  <div class="card">
+    <h3>Standard</h3>
+    <p>R600 / night</p>
+  </div>
+
+  <div class="card">
+    <h3>Deluxe</h3>
+    <p>R900 / night</p>
+  </div>
+
+  <div class="card">
+    <h3>Family</h3>
+    <p>R1200 / night</p>
+  </div>
+</section>
+
+<!-- GALLERY (NO IMAGES YET) -->
+<section class="gallery">
+  <h2>Gallery 📸</h2>
+
+  <div class="grid">
+    <div class="box">Room</div>
+    <div class="box">Bathroom</div>
+    <div class="box">Exterior</div>
+    <div class="box">Lounge</div>
+  </div>
+</section>
+
+<!-- BOOKING -->
 <section class="booking">
-  <h2>Booking System 📅</h2>
+  <h2>Book Now 📅</h2>
 
-  <label>Check-in:</label>
   <input type="date" id="checkin">
-
-  <label>Check-out:</label>
   <input type="date" id="checkout">
 
-  <label>Guests:</label>
-  <input type="number" id="guests" min="1" value="1">
+  <input type="number" id="guests" placeholder="Guests" min="1" value="1">
 
-  <label>Room Type:</label>
   <select id="room">
     <option value="600">Standard - R600</option>
     <option value="900">Deluxe - R900</option>
     <option value="1200">Family - R1200</option>
   </select>
 
-  <button onclick="calculate()">Calculate Price</button>
+  <button onclick="calc()">Calculate Total</button>
 
   <h3 id="total">Total: R0</h3>
 
-  <a id="bookBtn" class="btn" target="_blank">Book on WhatsApp</a>
+  <a id="whatsapp" class="btn" target="_blank">Book via WhatsApp</a>
 </section>
 
 <footer>
@@ -49,25 +84,31 @@
 </footer>
 
 <script>
-function calculate() {
+function calc() {
+
   let inDate = new Date(document.getElementById("checkin").value);
   let outDate = new Date(document.getElementById("checkout").value);
-  let roomPrice = parseInt(document.getElementById("room").value);
+  let price = parseInt(document.getElementById("room").value);
 
   let days = (outDate - inDate) / (1000 * 60 * 60 * 24);
 
-  if (days <= 0 || isNaN(days)) {
+  if (!days || days <= 0) {
     document.getElementById("total").innerText = "Select valid dates";
     return;
   }
 
-  let total = days * roomPrice;
+  let guests = document.getElementById("guests").value;
+  let total = days * price;
 
   document.getElementById("total").innerText = "Total: R" + total;
 
-  let msg = `Hi I want to book:%0ACheck-in: ${inDate.toDateString()}%0ACheck-out: ${outDate.toDateString()}%0AGuests: ${document.getElementById("guests").value}%0ATotal: R${total}`;
+  let msg = `Hi I want to book:%0A
+Check-in: ${inDate.toDateString()}%0A
+Check-out: ${outDate.toDateString()}%0A
+Guests: ${guests}%0A
+Total: R${total}`;
 
-  document.getElementById("bookBtn").href =
+  document.getElementById("whatsapp").href =
     "https://wa.me/27662395402?text=" + msg;
 }
 </script>
